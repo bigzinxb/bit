@@ -6,7 +6,7 @@ describe MathematicalOperationsWithBits do
             math = MathematicalOperationsWithBits.new
 
             bit_production1 = "0001"
-            bit_production2 = "1"
+            bit_production2 = "0001"
 
             expect(math.sum_bits(bit_production1, bit_production2)).to eql("0010")
         end
