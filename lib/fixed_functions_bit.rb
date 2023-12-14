@@ -25,5 +25,24 @@ module Bit
 
             return str_reversed.reduce(:+)
         end
+        
+        def padding!(bits1_padding, bits2_padding)
+            if bits1_padding.length < bits2_padding.length
+                until bits1_padding.length >= bits2_padding.length
+                    queue(bits1_padding)
+                end
+            end
+
+            if bits2_padding.length < bits1_padding.length
+                until bits2_padding.length >= bits1_padding.length
+                    queue(bits2_padding)
+                end
+            end
+        end
+        
+        private
+        def queue(bit, value="0")
+            bit.insert(0, value)
+        end
     end
 end

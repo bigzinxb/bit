@@ -1,4 +1,4 @@
-require_relative 'functions_bit.rb'
+require_relative 'fixed_functions_bit.rb'
 
 class MathematicalOperationsWithBits < Bit::FixedFunctionsBits
 
@@ -7,8 +7,10 @@ class MathematicalOperationsWithBits < Bit::FixedFunctionsBits
     end
 
     def sum_bits(bit_production1, bit_production2)
+        padding!(bit_production1, bit_production2)
+        
         total = bit_production1_reversed = reversed(bit_production1)
-        bit = bit_production2_reversed = reversed(bit_production2)
+        bit_production2_reversed = reversed(bit_production2)
 
         (0...bit_production1_reversed.length).each do |bit1|
             bit2 = bit1
