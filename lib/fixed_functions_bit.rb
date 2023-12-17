@@ -39,6 +39,10 @@ module Bit
                 end
             end
         end
+
+        def to_int(value_type)
+            return value_type.to_i
+        end
         
         private
         def queue(bit, value="0")
