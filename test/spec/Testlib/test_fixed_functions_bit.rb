@@ -33,4 +33,12 @@ describe Bit do
             end
         end
     end
+
+    it 'Test types to integer' do
+        functions_to_int = Bit::FixedFunctionsBits.new
+
+        str_variable = "2"
+
+        expect(functions_to_int.to_int(str_variable)).to eql(2)
+    end
 end
